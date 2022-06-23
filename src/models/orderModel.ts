@@ -1,5 +1,5 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
-import UnformattedOrder from '../interfaces/unformattedOrder';
+import IUnformattedOrder from '../interfaces/IUnformattedOder';
 import orderQueries from '../queries/orderQueries';
 
 class OrderModel {
@@ -12,12 +12,12 @@ class OrderModel {
   public async getAll() {
     const [response] = await this.connection.execute(orderQueries.getAll);
 
-    return response as UnformattedOrder[];
+    return response as IUnformattedOrder[];
   }
 
   public async create(userId: number): Promise<number> {
     const [{ insertId }] = await this.connection
-      .execute<ResultSetHeader>(orderQueries.create, [userId]);
+      .execute<ResultSetHeader>(orderQueries.createOrder, [userId]);
 
     return insertId;
   }
