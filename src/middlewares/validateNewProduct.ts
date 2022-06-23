@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import schemaNewProduct from '../joi/schemaNewProduct';
 import handleError from '../utils/handleError';
 
-const validateCreateProduct = (request: Request, _response: Response, next: NextFunction) => {
+const validateNewProduct = (request: Request, _response: Response, next: NextFunction) => {
   const { name, amount } = request.body;
 
   const { error } = schemaNewProduct.validate({ name, amount }); 
@@ -17,4 +17,4 @@ const validateCreateProduct = (request: Request, _response: Response, next: Next
   next();
 };
 
-export default validateCreateProduct;
+export default validateNewProduct;
