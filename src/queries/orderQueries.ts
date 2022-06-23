@@ -8,9 +8,9 @@ const getAll = `
   Trybesmith.Products AS pr ON pr.orderId = o.id;
 `;
 
-const create = 'INSERT INTO Trybesmith.Orders (userId) VALUES (?)';
+const createOrder = 'INSERT INTO Trybesmith.Orders (userId) VALUES (?)';
 
 export default {
   getAll,
-  create,
+  createOrder,
 }; 
