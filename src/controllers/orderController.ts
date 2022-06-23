@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import OrderService from '../services/orderService';
 
-class ProductController {
+class OrderController {
   constructor(private services = new OrderService()) {}
 
   public getAll = async (_request: Request, response: Response) => {
@@ -10,8 +10,8 @@ class ProductController {
     return response.status(200).json(orders);
   };
 
-  public create = async (request: Request, response: Response) => {
-    const { productsIds, decoded } = request.body;
+  public create = async (req: Request, response: Response) => {
+    const { productsIds, decoded } = req.body;
     const { idUser } = decoded.data;
 
     const order = await this.services.create(idUser, productsIds);
@@ -20,4 +20,4 @@ class ProductController {
   };
 }
 
-export default ProductController;
+export default OrderController;

@@ -19,7 +19,7 @@ const validateOrder = (request: ReqUser, _response: Response, next: NextFunction
 
     if (!authorization) return next(handleError(401, 'Token not found'));
 
-    const decoded = jwt.verify(authorization, 'tantoFaz');
+    const decoded = jwt.verify(authorization, 'baruchHashem');
 
     request.body = { ...request.body, decoded };
 
