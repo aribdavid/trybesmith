@@ -14,12 +14,12 @@ class UserController {
     return response.status(200).json({ token: response });
   };
 
-  public create = async (request: Request, res: Response) => {
+  public create = async (request: Request, response: Response) => {
     const { username, classe, level, password } = request.body;
 
     const token = await this.services.create({ username, classe, level, password });
 
-    return res.status(201).json({ token });
+    return response.status(201).json({ token });
   };
 }
 
