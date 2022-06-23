@@ -1,4 +1,4 @@
-// import IOrder from '../interfaces/order';
+import IOrder from '../interfaces/IOrder';
 import IUnformattedOrder from '../interfaces/IUnformattedOder';
 import connection from '../models/connection';
 import OrderModel from '../models/orderModel';
