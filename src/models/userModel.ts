@@ -1,6 +1,6 @@
 import { Pool, ResultSetHeader } from 'mysql2/promise';
 import userQueries from '../queries/userQueries';
-// import IUser from '../interfaces/user';
+import IUser from '../interfaces/IUser';
 
 interface IUserWithId extends IUser {
   id: number,
