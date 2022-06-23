@@ -11,7 +11,7 @@ class UserController {
 
     if (!user) return response.status(401).json({ message: 'Username or password invalid' });
 
-    return response.status(200).json({ token: response });
+    return response.status(200).json({ token: user });
   };
 
   public create = async (request: Request, response: Response) => {
